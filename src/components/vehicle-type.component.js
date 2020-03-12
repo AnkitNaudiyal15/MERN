@@ -20,12 +20,17 @@ export default  class VehicleType extends Component {
   
     render() {
       return (
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Name:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <input type="submit" value="Submit" />
+        
+        <form onSubmit={this.handleSubmit} >
+          <div className="form-group">
+              <lable> Vechile Type</lable>
+              <input type="text" className="form-control" value={this.state.value} onChange={this.handleChange} />
+          </div>
+         
+          <div className="form-group">
+                <input type="submit" class="btn btn-primary" value="Submit" />
+          </div>
+          
         </form>
       );
     }
