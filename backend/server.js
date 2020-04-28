@@ -24,16 +24,20 @@ const connection = mongoose.connection;
             }
     });
  });
-
-//  vehicleRoutes.route('/:id').get(function(req, res){
-//      let id = req.params.id;
-//     Vehicle.findById(id, function(err ,vechile){
+ vehicleRoutes.route('/:id').get(function(req, res){
+     let id = req.params.id;
+    Vehicle.findById(id, function(err ,vechile){
           
-//                 res.json(vechile);
-//     });
-//  });
+                res.json(vechile);
+    });
+ });
 
  vehicleRoutes.route('/create').post(function(req, res){
+
+    // console.log('re--------st');
+    // console.log(req.body);
+    // console.log('re--------endy');
+
   let vechile = new Vehicle(req.body);
   vechile.save()
   .then(vechile => {
@@ -44,8 +48,8 @@ const connection = mongoose.connection;
 });
 
 
- vehicleRoutes.route('update/:id').get(function(req, res){
-     let id = req.params.id;
+ vehicleRoutes.route('update/:id').put(function(req, res){
+    let id = req.params.id;
     Vehicle.findById(id, function(err ,vechile){
           if(!vechile){
               res.status(404).send('Data not found');
@@ -61,7 +65,8 @@ const connection = mongoose.connection;
           }
     });
  });
- app.use('/vechile',Vehicle);
+
+ app.use('/vechiles',vehicleRoutes);
 
 app.listen(PORT,function(){
     console.log("server is running on the port" + PORT);

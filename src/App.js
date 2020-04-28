@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+import React from 'react';
 import {BrowserRouter as Router,Route,Link} from "react-router-dom";
 import logo from "./logo.png";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -10,8 +10,8 @@ function App() {
     <Router>
       <div className="container">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <a className="navbar-brand" href="#" target="_blank">
-            <img src={logo} width="100" height="50" alt="Parking App"></img>
+          <a className="navbar-brand" href='/'>
+            <img src={logo} width="100" height="50" alt="Parking App"/>
           </a>
           <Link to="/" className="navbar-brand">MERN Learning app</Link>
           <div className="nav-collapse">

@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 const Schema =mongoose.Schema;
 let Vehicle = new Schema({
-    vehicle_type :{
-        type:String
+    vehicletype :{
+        type: String
     }
+},{
+    collection: 'vehicle'
 });
 module.exports= mongoose.model('Vehicle',Vehicle);
